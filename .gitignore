@@ -16,6 +16,7 @@
 .env
 .env.local
 .env.*.local
+env
 
 # Arquivos de sistema operacional
 .DS_Store
