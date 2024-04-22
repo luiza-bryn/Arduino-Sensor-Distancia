@@ -1,0 +1,42 @@
+# Arquivos de compilação
+*.o
+*.out
+*.exe
+
+# Arquivos de log e cache
+*.log
+*.cache
+
+# Diretórios e arquivos específicos a linguagens ou frameworks
+/node_modules
+/__pycache__
+*.pyc
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração específicos do editor
+.vscode/
+.idea/
+
+# Dependências e arquivos gerados pela construção do projeto
+/build
+/dist
+/node_modules
+
+# Arquivos de backup
+*.bak
+*.backup
+*.swp
+
+# Outros
+*.zip
+*.rar
+*.gz
+*.tar.gz
