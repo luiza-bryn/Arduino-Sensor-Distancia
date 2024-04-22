@@ -23,7 +23,23 @@ void setup()
     Serial.println("Waiting for connection"); 
   } 
 }
-  
+
+void send_http_get() {
+  if (WiFi.status() == WL_CONNECTED) {                   // Verifica estado do Wi-Fi 
+     WiFiClient client;                                  // Declara variável WiFIClient
+     HTTPClient http;                                    // Declara variável HTTPClient    
+     http.begin(client, "http://localhost:5000/api/distancia_limite");  // Define URL
+     http.addHeader("Content-Type", "text/plain");       // Especifica tipo de conteúdo
+     int httpCode = http.GET();                          // Envia requisição HTTP GET 
+     String payload = http.getString();                  // Obtém os dados de resposta
+     Serial.println(httpCode);                           // Imprime código de retorno
+     Serial.println(payload);                            // Imprime dados de resposta
+     http.end();                                         // Fecha a conexão
+  } else { 
+    Serial.println("Error in WiFi connection"); 
+  }
+}
+
 void loop()
 {
   //Coleta distancia pelo módulo
